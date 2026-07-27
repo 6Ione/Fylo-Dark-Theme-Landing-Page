@@ -21,10 +21,8 @@
       justify-content: space-around;
       align-items: center;
     }
-
-    .nav-bar h1 {
-      color: hsl(0, 0%, 100%);
-      font-size: 3rem;
+    .nav-bar img {
+      margin-top: 4rem;
     }
 
     .navButtons {
@@ -171,6 +169,14 @@
       max-width: 1200px;
       margin: 6rem auto 0;
       padding: 0 3rem;
+      position: relative;
+    }
+    .reviews > img {
+      position: absolute;
+      top: -35px;
+      left: 20px;
+      width: 55px;
+      z-index: 0;
     }
 
     .review {
@@ -187,6 +193,19 @@
       margin: 0 0 1.5rem;
     }
 
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .profile-image img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
     .profile h3 {
       color: white;
       font-family: "Raleway", sans-serif;
@@ -197,6 +216,24 @@
     .profile span {
       color: hsl(0, 0%, 75%);
       font-size: 0.8rem;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-info h3 {
+      color: white;
+      font-size: 0.85rem;
+      margin: 0;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .profile-info span {
+      color: hsl(0, 0%, 75%);
+      font-size: 0.7rem;
+      margin-top: 2px;
     }
 
     .signup {
@@ -261,9 +298,8 @@
       grid-template-columns: 2fr 2fr 1fr 1fr;
       gap: 2.5rem;
       max-width: 1900px;
-      margin: 6rem auto 0;
+      margin: 1rem auto 0;
       padding: 10rem 3rem 4rem;
-      align-items: start;
     }
 
     .footerBrand {
@@ -337,13 +373,163 @@
       color: white;
       text-decoration: underline;
     }
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .nav-bar {
+        justify-content: space-between;
+        padding: 2rem 1.5rem;
+      }
+
+      .nav-bar img {
+        width: 90px;
+        margin-top: 0;
+      }
+
+      .navButtons {
+        gap: 1rem;
+      }
+
+      .navButtons button {
+        font-size: 0.85rem;
+      }
+
+      .hero {
+        padding: 0 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+        line-height: 1.45;
+        margin-top: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .hero button {
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem;
+      }
+
+      .hero-illustration {
+        width: 100%;
+        margin-top: 2rem;
+      }
+
+      .icons {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        padding: 4rem 2rem;
+      }
+
+      .icon img {
+        width: 70px;
+      }
+
+      .icon h2 {
+        font-size: 1.25rem;
+      }
+
+      .icon p {
+        font-size: .95rem;
+      }
+
+      .tryFylo {
+        flex-direction: column;
+        text-align: left;
+        padding: 0 2rem;
+        gap: 3rem;
+      }
+
+      .productiveIllustration img {
+        width: 100%;
+      }
+
+      .productiveText h1 {
+        font-size: 1.5rem;
+        max-width: 100%;
+      }
+
+      .productiveText p {
+        max-width: 100%;
+        font-size: .95rem;
+      }
+
+      .reviews {
+        grid-template-columns: 1fr;
+        padding: 0 2rem;
+        gap: 2rem;
+      }
+
+      .reviews > img {
+        width: 35px;
+        left: 35px;
+        top: -20px;
+      }
+
+      .review {
+        padding: 1.6rem;
+      }
+
+      .signup {
+        width: calc(100% - 3rem);
+        margin: 6rem auto -5rem;
+        padding: 2rem 1.5rem;
+      }
+
+      .signup h1 {
+        font-size: 1.5rem;
+      }
+
+      .signup p {
+        font-size: .95rem;
+      }
+
+      .signupForm {
+        flex-direction: column;
+      }
+
+      .signup input {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .signup button {
+        width: 100%;
+      }
+
+      .bottomSection {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 10rem 2rem 3rem;
+      }
+
+      .footerBrand {
+        max-width: 100%;
+      }
+
+      .location p, .contact p {
+        max-width: 100%;
+      }
+
+      .buttons, .moreButtons {
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
     <div class="container">
       <div class="nav-bar">
-        <h1>Fylo</h1>
+        <img src="images/logo.svg" alt="logo">
 
         <div class="navButtons">
           <button type="button">Features</button>
@@ -404,13 +590,20 @@
         </div>
 
         <div class="reviews">
+          <img src="images/bg-quotes.png" alt="bg-quotes">
           <div class="review">
             <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has 
               become a well-oiled collaboration machine.</p>
 
             <div class="profile">
-              <h3>Satish Patel</h3>
-              <span>Founder & CEO, Huddle</span>
+              <div class="profile-image">
+                <img src="images/profile-1.jpg" alt="profile-pic">
+              </div>
+
+              <div class="profile-info">
+                <h3>Satish Patel</h3>
+                <span>Founder & CEO, Huddle</span>
+              </div>
             </div>
           </div>
           <div class="review">
@@ -418,8 +611,13 @@
               become a well-oiled collaboration machine.</p>
 
             <div class="profile">
-              <h3>Bruce McKenzie</h3>
-              <span>Founder & CEO, Huddle</span>
+              <div class="profile-image">
+                <img src="images/profile-2.jpg" alt="profile-pic">
+              </div>
+              <div class="profile-info">
+                <h3>Bruce McKenzie</h3>
+                <span>Founder & CEO, Huddle</span>
+              </div>
             </div>
           </div>
           <div class="review">
@@ -427,8 +625,13 @@
               become a well-oiled collaboration machine.</p>
 
             <div class="profile">
-              <h3>Iva Boyd</h3>
-              <span>Founder & CEO, Huddle</span>
+              <div class="profile-image">
+                <img src="images/profile-3.jpg" alt="profile-pic">
+              </div>
+              <div class="profile-info">
+                <h3>Iva Boyd</h3>
+                <span>Founder & CEO, Huddle</span>
+              </div>
             </div>
           </div>
         </div>
@@ -473,10 +676,5 @@
         </div>
     </div>
   </main>
-
-    <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
 </body>
 </html>
